@@ -58,9 +58,9 @@
       <h3 id="titol-afegir" style="margin-top:0;">Nou vi</h3>
       
       <label class="btn btn-cam" id="lbl-camera">
-        📷 Escanejar etiqueta amb càmera
-        <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="processarFoto(this)">
-      </label>
+  📷 Escanejar o pujar foto d'etiqueta
+  <input type="file" accept="image/*" style="display:none;" onchange="processarFoto(this)">
+</label>
 
       <input type="hidden" id="add-fila">
       <input type="hidden" id="add-col">
@@ -149,7 +149,7 @@
           } catch (err) {
             alert('No s\'ha pogut llegir l\'etiqueta, omple-ho manualment.');
           }
-          lbl.innerHTML = '📷 Tornar a escanejar <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="processarFoto(this)">';
+         lbl.innerHTML = '📷 Tornar a escanejar o pujar foto <input type="file" accept="image/*" style="display:none;" onchange="processarFoto(this)">';
         };
         img.src = e.target.result;
       };
