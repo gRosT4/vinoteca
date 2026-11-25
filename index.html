@@ -137,11 +137,15 @@
               body: JSON.stringify({ accio: 'escanejar', imatgeBase64: base64 })
             });
             const info = await res.json();
-            if (info.nom) document.getElementById('add-nom').value = info.nom;
-            if (info.tipus) document.getElementById('add-tipus').value = info.tipus;
-            if (info.do) document.getElementById('add-do').value = info.do;
-            if (info.crianca) document.getElementById('add-crianca').value = info.crianca;
-            if (info.comentari) document.getElementById('add-comentari').value = info.comentari;
+            if (info.error) {
+              alert(info.error);
+            } else {
+              if (info.nom) document.getElementById('add-nom').value = info.nom;
+              if (info.tipus) document.getElementById('add-tipus').value = info.tipus;
+              if (info.do) document.getElementById('add-do').value = info.do;
+              if (info.crianca) document.getElementById('add-crianca').value = info.crianca;
+              if (info.comentari) document.getElementById('add-comentari').value = info.comentari;
+           }
           } catch (err) {
             alert('No s\'ha pogut llegir l\'etiqueta, omple-ho manualment.');
           }
